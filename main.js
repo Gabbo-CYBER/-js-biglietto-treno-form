@@ -1,11 +1,11 @@
-//let km = prompt('Quanti km devi percorrere?');
-//console.log(km);
+let km = prompt('Quanti km devi percorrere?');
+console.log(km);
 
-//let age = prompt('Qual\'è la tua età?');
-//console.log(age);
+let age = prompt('Qual\'è la tua età?');
+console.log(age);
 
 let full_price = km * 0.21;
-//console.log(full_price);
+console.log(full_price);
 
 let final_price;
 
@@ -19,14 +19,14 @@ else{
     final_price = full_price.toFixed(2);
 }
 
-//console.log(final_price);
+console.log(final_price);
 
-//const name = document.querySelector(".name");
-//const btn = document.querySelector("button");
+const name = document.querySelector(".name");
+const btn = document.querySelector("button");
 
 myButton.addEventListener('click', function() {
     console.log(full_price);
    
 });
 
-document.addEventListener('button').innerHTML += final_price + ' $';
+document.getElementById('button').innerHTML += final_price + ' $';
