@@ -1,32 +1,42 @@
-let km = prompt('Quanti km devi percorrere?');
-console.log(km);
+const kmInput = document.getElementById('km');
+const ageInput = document.getElementById('age');
 
-let age = prompt('Qual\'è la tua età?');
-console.log(age);
+const priceForm = document.querySelector('form');
 
-let full_price = km * 0.21;
-console.log(full_price);
+priceForm.addEventListener('submit', function (eventoIntercettato) {
+    eventoIntercettato.preventDefault();
 
-let final_price;
+    console.log('eventoIntercettato', eventoIntercettato, typeof eventoIntercettato);
 
-if (age > 65) {
-    final_price = (full_price * 0.6).toFixed(2);
-}
-else if (age < 18){
-    final_price = (full_price * 0.8).toFixed(2);
-}
-else{
-    final_price = full_price.toFixed(2);
-}
+    console.log('kmInput.value', kmInput.value, typeof kmInput.value);
+    console.log('ageInput.value', ageInput.value, typeof ageInput.value);
 
-console.log(final_price);
+    if (kmInput.value != '' && ageInput.value != '') {
+        const costPerKm = 0.21;
+        const basePrice = kmInput.value * costPerKm;
+        console.log('Prezzo base biglietto:', basePrice);
+        
+        let finalPrice = basePrice;
+        
+        if (ageInput.value < 18) {
+            console.log('Applico lo sconto del 20%');
+        
+            finalPrice = basePrice * 0.8;
+            console.log('Prezzo scontato del 20%:', finalPrice);
+        }
+        else if (ageInput.value > 65) {
+            console.log('Applico lo sconto del 40%');
+        
+            finalPrice = basePrice * 0.6;
+            console.log('Prezzo scontato del 40%:', finalPrice);
+        }
+        
+        console.log('Prezzo finale:', finalPrice.toFixed(2));
 
-const name = document.querySelector(".name");
-const btn = document.querySelector("button");
-
-myButton.addEventListener('click', function() {
-    console.log(full_price);
-   
+        document.getElementById('price-result').innerHTML = '€ ' + finalPrice.toFixed(2);
+    }
+    else {
+        alert('Dati non validi');
+    }
 });
 
-document.getElementById('button').innerHTML += final_price + ' $';

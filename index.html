@@ -31,22 +31,25 @@
         <div class="row align-items-center">
           <div class="col"> Nome e Cognome
             <form class="form-floating">
-                <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
-                <label for="floatingInputValue">Input with value</label>
-              </form>
+              <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="nome e cognome">
+              <label for="floatingInputValue">Input with value</label>
+            </form>
           </div>
           <div class="col"> Km da percorrere
             <form class="form-floating">
-                <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
-                <label for="floatingInputValue">Input with value</label>
+              <form class="form-floating">
+                <input type="number" id="km" name="km" placeholder="Quanti KM devi percorrere?" required min="5" max="1000">
+                <label for="km"></label>
               </form>
-              <button id="clickable-button price"> Genera 
+              <button id="calc-button">
+                 Genera 
+              </button>
           </div>
           <div class="col"> Fascia d'età
             <form class="form-floating">
-                <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
-                <label for="floatingInputValue">Input with value</label>
-              </form>
+              <input type="number" id="age" name="age" placeholder="Quanti anni hai?" required min="10" max="150">
+              <label for="age"></label>
+            </form>
           </div>
         </div>
       </div>
@@ -55,13 +58,13 @@
 
 
 
-<h2>
-	<span id="msg">prezzo :&nbsp;</span>
-	<span id="price"></span>
-</h2>
 
 <script type="text/javascript" src="./main.js"></script>
 
 </body>
 
 </html>
+
+
+
+
